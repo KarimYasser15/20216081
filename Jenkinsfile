@@ -8,7 +8,13 @@ pipeline {
         }
         stage('Execute Script') {
             steps {
-                bat 'run_ls.sh'
+                script {
+                    if (isUnix()) {
+                        sh './run_ls.sh' // For Linux/Unix
+                    } else {
+                        bat 'run_ls.bat' // For Windows
+                    }
+                }
             }
         }
     }
