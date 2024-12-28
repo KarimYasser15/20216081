@@ -6,6 +6,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/KarimYasser15/20216081'
             }
         }
+        stage('Set Permissions') {
+            steps {
+                sh 'chmod +x run_ls.sh'
+            }
+        }
         stage('Execute Script') {
             steps {
                 script {
