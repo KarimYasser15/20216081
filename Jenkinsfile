@@ -6,7 +6,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/KarimYasser15/20216081'
             }
         }
-        stage('Execute Batch Script') {
+        stage('Execute Script') {
             steps {
                 bat 'run_ls.sh'
             }
